@@ -40,6 +40,31 @@ Estimate of time needed to complete: 15 min
 
 Start time: 6:00
 
-Finish time: 5:20
+Finish time: 6:20
 
-Actual time needed to complete: 40 min
+Actual time needed to complete: 20 min
+
+//----------------------------------LAB-12---------------------------------------
+
+Number and name of feature:1. As a user, I want all of my saved books to be displayed on the home page so that I can view all of the books from my collection in a single view.
+
+Estimate of time needed to complete: 15 min
+
+Start time: 3:00
+
+Finish time: 3:25
+
+Actual time needed to complete: 25 min
+
+
+
+
+Number and name of feature: 2. As a user, I want to request information about a single book so that I can view its additional details and share it by URL.
+
+Estimate of time needed to complete: 15 min
+
+Start time: 3:30
+
+Finish time: 3:25
+
+Actual time needed to complete: 25 min
