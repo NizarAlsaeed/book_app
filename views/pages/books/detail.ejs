@@ -1,0 +1,11 @@
+<ul>  
+    <% result.forEach(obj=>{ %>
+        <div>
+            <li><%= obj.title %></li>
+            <li><%= obj.author %></li>
+            <li><%= obj.isbn %></li>
+            <li><img src="<%= obj.image_url %>"/></li>
+            <li><%= obj.description %></li>
+        </div>
+    <%});%>
+</ul>

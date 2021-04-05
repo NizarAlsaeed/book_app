@@ -5,10 +5,12 @@ body{
     background-color: #9b9b9b;
     font-family: sans-serif;
 }
-main{
+main section{
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
+    border: black 1px solid;
+    padding: 50px;
 }
 
 nav{
