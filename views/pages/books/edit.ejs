@@ -1,0 +1,10 @@
+<% result.forEach(obj=>{ %>
+<form action="/edit/<%= obj.id %>" method="POST">
+    <input name = "edit" value = "<%= obj.title %>" />
+    <input name = "edit" value = "<%= obj.author %>" />
+    <input name = "edit" value = "<%= obj.isbn %>" />
+    <input name = "edit" value = "<%= obj.image_url %>" />
+    <textarea name="edit" cols="30" rows="10"><%= obj.description %></textarea>
+    <button id="ubdateBtn">Update book</button>
+</form>
+<%});%>

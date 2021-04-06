@@ -63,6 +63,29 @@ app.post('/books',(req,res)=>{
     });
 });
 
+app.post('/edit/:id',(req,res)=>{
+    let data = req.body.edit;
+    let id = req.params.id;
+    console.log('id', id);
+    console.log('data', data);
+    const SQL = `UPDATE books SET title=$1,author=$2,isbn=$3,image_url=$4,description=$5 WHERE id = ${id}  RETURNING *`;
+    let values=data;
+    client.query(SQL,values).then(result=>{
+        console.log('edited');
+        res.render('pages/books/show',{result:result.rows});
+    });
+});
+
+app.post('/delete/:id',(req,res)=>{
+    let id = req.params.id;
+    console.log('id', id);
+    const SQL = `DELETE FROM books WHERE id = ${id}`;
+    client.query(SQL).then(result=>{
+        console.log('deleted');
+        res.redirect('/');
+    });
+});
+
 app.get('*',(req,res)=>res.render('pages/error'));
 
 //----------------------------------------------------------------------
