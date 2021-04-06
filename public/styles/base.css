@@ -9,7 +9,6 @@ main section{
     max-width: 400px;
     margin: 0 auto;
     text-align: center;
-    border: black 1px solid;
     padding: 50px;
 }
 
@@ -51,4 +50,7 @@ a{
     background-color: whitesmoke;
     text-decoration: none;
     color: black;
+}
+h4{
+    margin-bottom: 20px;
 }

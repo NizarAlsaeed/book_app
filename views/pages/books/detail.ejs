@@ -1,11 +1,27 @@
 <ul>  
     <% result.forEach(obj=>{ %>
         <div>
+            <li><img src="<%= obj.image_url %>"/></li>
             <li><%= obj.title %></li>
             <li><%= obj.author %></li>
-            <li><%= obj.isbn %></li>
-            <li><img src="<%= obj.image_url %>"/></li>
             <li><%= obj.description %></li>
+            <li><%= obj.isbn %></li>
+            <button id="updBtn">Update details</button>
+            <li style="display:none;" id="includeEdit">
+                <%-include('edit')%>
+            </li>
+            <li>
+                <form action="/delete/<%= obj.id %>" method="POST">
+                        <button>Delete book</button>
+                </form>
+            </li>
         </div>
     <%});%>
 </ul>
+<script>
+    const el = document.querySelector('#includeEdit');
+const btnEl = document.querySelector('#updBtn');
+btnEl.addEventListener('click',()=>{
+    el.hasAttribute('style')?el.removeAttribute('style'):el.setAttribute('style','display:none;');
+});
+</script>

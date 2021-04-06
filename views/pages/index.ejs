@@ -8,16 +8,12 @@
     <%-include('../layout/header')%>
     <main id="home-main">
         <section>
-            <a href="/searches/new">Start</a>
-            <br>
-            <h3>Your Book Collection</h3>
-            <br>
+            <a href="/searches/new">search</a>
             <h4><%=result.length%> Book</h4>
-            <br>
             <% result.forEach(book=>{%>
                 <p><%= book.title %></p>
                 <br>
-                <img src="<%= book.image_url %>">
+                <img src="<%= book.image_url %>" width="150px">
                 <a href="/books/<%=book.id%>">view details</a>
 
             <%}) %>
