@@ -3,6 +3,7 @@
 require('dotenv').config();
 const express = require('express');
 const superagent = require('superagent');
+const methodOverride = require('method-override');
 const pg = require('pg');
 const PORT = process.env.PORT;
 const client = new pg.Client(process.env.DATABASE_URL);
@@ -12,7 +13,7 @@ app.use(express.urlencoded({ extended: true }));
 // Set the view engine for server-side templating
 app.set('view engine', 'ejs');
 app.use(express.static(__dirname + '/public'));
-
+app.use(methodOverride('_method'));
 client.connect().then(()=>{
     app.listen(PORT,()=>console.log('App is running on Port:',PORT ));
 });
@@ -63,7 +64,7 @@ app.post('/books',(req,res)=>{
     });
 });
 
-app.post('/edit/:id',(req,res)=>{
+app.put('/edit/:id',(req,res)=>{
     let data = req.body.edit;
     let id = req.params.id;
     console.log('id', id);
@@ -76,7 +77,7 @@ app.post('/edit/:id',(req,res)=>{
     });
 });
 
-app.post('/delete/:id',(req,res)=>{
+app.delete('/delete/:id',(req,res)=>{
     let id = req.params.id;
     console.log('id', id);
     const SQL = `DELETE FROM books WHERE id = ${id}`;

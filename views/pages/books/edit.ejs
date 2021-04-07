@@ -1,5 +1,5 @@
 <% result.forEach(obj=>{ %>
-<form action="/edit/<%= obj.id %>" method="POST">
+<form action="/edit/<%= obj.id %>?_method=PUT" method="POST">
     <input name = "edit" value = "<%= obj.title %>" />
     <input name = "edit" value = "<%= obj.author %>" />
     <input name = "edit" value = "<%= obj.isbn %>" />
